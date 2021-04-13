@@ -17,29 +17,32 @@ public class TesteFacil {
 
 	public static void main(String[] args) {
 		
-		int res1, p1 =0, p2=1, proxm = 0, valor;
-		int seq[]=new int[20];
+		int res1;
+		long p1 =0, p2=1, proxm = 0, valor, pos = 0;
+		long seq[]=new long[1000];
 		boolean res=true;
 		Scanner scan = new Scanner(System.in);
+		System.out.println("*****Sequência Fibonacci *****");
+//		System.out.println("Quantas posições você que ver? ");
+//		pos = scan.nextLong();
 		
-		System.out.println("Sequência Fibonacci com 20 posições");
-		// Sequência Fibonacci em um vetor de 20 posições
-		for (int i=0; i <20; i++) {
+		// Sequência Fibonacci em um vetor 
+		for (int i=0; i <1000; i++) {
 			seq[i]=proxm;
 			proxm = p1 + p2;
 			p1 = p2;
 			p2 = proxm;
 		}
 		do {
-			System.out.println("\nEscolha um valor nteiro de 0 ate "+seq[19]+": ");
-			valor = scan.nextInt();  
-			for(int i=0; i <20; i++) {
+			System.out.println("\nEscolha um valor nteiro de 0 ate "+seq[999]+": ");
+			valor = scan.nextLong();  
+			for(int i=0; i <1000; i++) {
 				if(seq[0] == valor) {
 					System.out.print("\nDepos de "+valor+" é "+seq[i+1]);
 					res=false;
 					break;
-				}else if(seq[19] == valor) {
-					System.out.print("\nDepos de "+valor+" é "+(seq[18]+seq[19]));
+				}else if(seq[999] == valor) {
+					System.out.print("\nDepos de "+valor+" é "+(seq[998]+seq[999]));
 					res=false;
 					break;
 				}else if(seq[i] == valor) {
@@ -49,8 +52,8 @@ public class TesteFacil {
 			}
 			if(res) {
 				System.out.println("\nO número "+valor+" faz parte da sequência de Fibonacci\n");
-				for(int i=0;i<20;i++) {
-					System.out.print(seq[i]+ " ");
+				for(int i=0;i<1000;i++) {
+					System.out.println(seq[i]);
 				}
 			}
 			System.out.println("\n\nQue tenta novamente?\n1 - sim\n2 - não");
